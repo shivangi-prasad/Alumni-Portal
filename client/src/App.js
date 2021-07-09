@@ -1,19 +1,24 @@
 import './App.css';
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
-import Home from './homepage/home';
+import AlumniPage from './alumnipage/alumniPage';
+import HomePage from './homepage/homepage'
 import Register from './components/Register';
 import StudentRegister from './components/StudentRegister';
 import BlogPage from './blog_alumni/blog'
 import Login from './components/Login'
-import CommonRegister from './components/commonRegister' 
+import CommonRegister from './components/commonRegister'
+import Profile from './Profile/profile'
 
 function App() {
   return (
     <BrowserRouter>
        <Switch>
          <Route path='/' exact>
-           <Home/>
+           <HomePage/>
+         </Route>
+         <Route path='/alumni/all' exact>
+           <AlumniPage/>
          </Route>
          <Route path='/register' exact>
             <CommonRegister/>
@@ -24,7 +29,10 @@ function App() {
          </Route>
          <Route path='/login' exact>
            <Login/>
-         </Route>
+        </Route>
+        <Route path='/profile' exact>
+          <Profile/>
+        </Route>
        </Switch>
     </BrowserRouter>
     
